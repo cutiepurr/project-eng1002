@@ -1,0 +1,19 @@
+After providing a random customer's name and phone number, we expect
+the terminal to display:
+
+=============MENU=============
+(1): Beef Pho - $16.20
+(2): Shrimp Cold Roll - $7.00
+(3): Vietnamese Roll - $10.50
+(4): Iced Coffee - $6.50
+==============================
+
+***INSTRUCTION***
+To order a dish, please enter the number associated with that dish.
+To finish the order, press key 0.
+
+Please enter the number of the dish: 
+
+
+---
+After entering a random number, the program finishes running.

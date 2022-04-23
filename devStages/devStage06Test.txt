@@ -1,0 +1,31 @@
+inputs:
+    order=2
+    quantity=2
+    order=1
+    quantity=3
+    order=0
+
+output:
+Your Order (Quantity - Item): 
+    "2"    "Shrimp Cold Roll"
+    "3"    "Beef Pho"        
+
+Rendering receipt...
+Receipt saved as 17-Apr-2022 14:54:18.txt
+
+** in 17-Apr-2022 14:54:18.txt:
+_________________________________________
+                Vietnamese
+               Restaurant
+
+                 RECEIPT
+   17-Apr-2022 14:54:18
+Customer: LINH
+Phone Number: 0478682996
+
+2 x	Shrimp Cold Roll    $14.00
+3 x	Beef Pho            $48.60
+
+Total: $62.60
+                THANK YOU!
+_________________________________________

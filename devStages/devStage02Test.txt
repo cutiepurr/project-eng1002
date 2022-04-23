@@ -1,0 +1,31 @@
+# Test cases for customer's phone number
+# case 1: length < 10
+input: phone=123
+output: terminal shows: Please provide a correct format of a phone number (loop until correct)
+
+# case 2: string
+input: phone=abcdefghik
+output: terminal shows: Please provide a correct format of a phone number (loop until correct)
+
+# case 3: is a number and has length of 10
+input: phone=0478682996
+output: program runs as normal
+
+------------------------------------------------------
+
+# Test cases for order number
+# case 1: negative number
+input: order=-9
+output: terminal shows: Please enter a valid key (loop until correct)
+
+# case 2: number not included in the menu
+input: order=23
+output: terminal shows: Please enter a valid key (loop until correct)
+
+# case 3: number included in the menu
+input: order=4
+output: program will ask for quantity. After user enters the quantity, program will ask for the next order (loop).
+
+# case 4: 0
+input: order=0
+output: program will break the loop and record all valid orders. Program finishes running.

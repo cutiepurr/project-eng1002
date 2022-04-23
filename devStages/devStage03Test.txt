@@ -1,0 +1,18 @@
+input: order=0 right at the beginning
+output: Order unsuccessfully
+
+-------------------------------------------
+
+inputs:
+    order=2
+    quantity=2
+    order=1
+    quantity=3
+    order=0
+output:
+Ordered successfully. Here is the receipt:
+    QTY           ITEM            AMT  
+    ___    __________________    ______
+
+    "2"    "Shrimp Cold Roll"    "14"  
+    "3"    "Beef Pho"            "48.6"
