@@ -1,0 +1,27 @@
+inputs:
+    order=2
+    quantity=2
+    order=1
+    quantity=3
+    order=0
+
+output:
+Ordered successfully. Here is the receipt:
+_________________________________________
+===============Vietnamese===============
+===============Restaurant===============
+
+                 RECEIPT
+   17-Apr-2022 14:47:46
+
+ Customer: XXX
+ Phone Number: 0478682996
+    QTY          ITEM          AMT 
+    ___    ________________    ____
+
+     2     Shrimp Cold Roll      14
+     3     Beef Pho            48.6
+
+ Total: $62.60
+                THANK YOU!
+_________________________________________

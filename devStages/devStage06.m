@@ -21,6 +21,9 @@ orders=[];
 while order ~= 0
     if order <= size(MENUITEMS, 2) && order >= 1
         numDishes = input("Quantity: ");
+        while numDishes > 9
+            numDishes = input("Sorry, we don't take more than 9. Please re-enter: ");
+        end
         orders = [orders; numDishes, MENUITEMS(order), MENUPRICES(order) * numDishes];
         order = input("Please enter dish number: ");
     else

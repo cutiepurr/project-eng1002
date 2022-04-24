@@ -40,12 +40,12 @@ if order == 0
         disp("Ordered unsucessfully."); 
     else
         disp("Ordered successfully. Here is the receipt:");
-        createreceipt(orders, name, phone);
+        createReceipt(orders, name, phone);
     end
 end
 
 % TODO2: Create a function to display receipt
-function receipt = createreceipt(orders, customerName, customerPhone)
+function [] = createReceipt(orders, customerName, customerPhone)
     arguments
         orders(:,3) string
         customerName string

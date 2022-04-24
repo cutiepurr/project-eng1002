@@ -41,12 +41,12 @@ if order == 0
     else
         disp("Your Order (Quantity - Item): ");
         disp(orders(:,1:2));
-        createreceipt(orders, name, phone);
+        createReceipt(orders, name, phone);
     end
 end
 
 % TODO2: Create a function to display receipt
-function [] = createreceipt(orders, customerName, customerPhone)
+function [] = createReceipt(orders, customerName, customerPhone)
     arguments
         orders(:,3) string
         customerName string

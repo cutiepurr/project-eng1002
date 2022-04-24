@@ -1,8 +1,8 @@
-% Store menu data in a constant
-MENU = ["Beef Pho", 16.20; "Shrimp Cold Roll", 7.00; "Vietnamese Roll", 10.50; "Iced Coffee", 6.50];
-[menuRows, menuCols] = size(MENU);
+% Store menu data in constants
+MENUITEMS = ["Beef Pho", "Shrimp Cold Roll", "Vietnamese Roll", "Iced Coffee"];
+MENUPRICES = [16.20, 7.00, 10.50, 6.50];
 
-% TODO1: Ask for customer's info: name, phone number, time, orders
+% TODO1: Ask for customer's info: name, phone number, orders
 name = input("Customer's name: ", "s");
 phone = input("Customer's phone number: ", "s");
 while isnan(str2double(phone)) || strlength(phone) ~= 10
@@ -10,7 +10,7 @@ while isnan(str2double(phone)) || strlength(phone) ~= 10
 end
 
 % display menu and instruction
-displayMenu(MENU);
+displayMenu(MENUITEMS, MENUPRICES);
 displayInstruction();
 
 % ask for order
@@ -19,9 +19,12 @@ order = input("Please enter dish number: ");
 % Handle order
 orders=[];
 while order ~= 0
-    if order <= menuRows && order >= 1
+    if order <= size(MENUITEMS, 2) && order >= 1
         numDishes = input("Quantity: ");
-        orders = [orders; numDishes, MENU(order,1), str2double(MENU(order,2)) * numDishes];
+        while numDishes > 9
+            numDishes = input("Sorry, we don't take more than 9. Please re-enter: ");
+        end
+        orders = [orders; numDishes, MENUITEMS(order), MENUPRICES(order) * numDishes];
         order = input("Please enter dish number: ");
     else
         order = input("Please enter a valid key: ");
@@ -35,15 +38,15 @@ if order == 0
     else
         disp("Your Order (Quantity - Item): ");
         disp(orders(:,1:2));
-        createreceipt(orders, name, phone);
+        createReceipt(orders, name, phone);
     end
 end
 
 % display menu
-function [] = displayMenu(menu)
+function [] = displayMenu(menuItems, menuPrices)
     disp("=============MENU=============");
-    for i = 1: size(menu,1)
-        fprintf("(%d): %s - $%.2f\n", i, menu(i,1), menu(i,2));
+    for i = 1: size(menuItems,2)
+        fprintf("(%d): %s - $%.2f\n", i, menuItems(i), menuPrices(i));
     end
     fprintf("==============================\n\n");
 end
@@ -56,7 +59,7 @@ function [] = displayInstruction()
 end
 
 % TODO2: Create a function to display receipt
-function [] = createreceipt(orders, customerName, customerPhone)
+function [] = createReceipt(orders, customerName, customerPhone)
     arguments
         orders(:,3) string
         customerName string
@@ -72,7 +75,7 @@ function [] = createreceipt(orders, customerName, customerPhone)
 
     % format head, body, and tail of the receipt
     headFormat = "_________________________________________\n" + ...
-        "                Vietnamese\n               Restaurant\n\n" + ...
+        "                Vietnamese\n                Restaurant\n\n" + ...
         "                 RECEIPT\n" + ...
         "   %s\nCustomer: %s\nPhone Number: %s\n\n";
     tailFormat = "\nTotal: $%.2f\n" + ...

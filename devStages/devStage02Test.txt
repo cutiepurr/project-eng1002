@@ -22,10 +22,14 @@ output: terminal shows: Please enter a valid key (loop until correct)
 input: order=23
 output: terminal shows: Please enter a valid key (loop until correct)
 
-# case 3: number included in the menu
+# case 3: number not included in the menu
+input: order=j
+output: terminal shows: Please enter a valid key (loop until correct)
+
+# case 4: number included in the menu
 input: order=4
 output: program will ask for quantity. After user enters the quantity, program will ask for the next order (loop).
 
-# case 4: 0
+# case 5: 0
 input: order=0
 output: program will break the loop and record all valid orders. Program finishes running.
